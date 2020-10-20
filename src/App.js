@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './lib/bootstrap-4.5.3-dist/css/bootstrap.min.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//extends the object Component
+class App extends Component {
+  //class constructor whith given properties
+  constructor(props) {
+    super(props)
+    //creation of an initial state, a json object
+    this.state = {
+      title: this.props.title,
+    }
+    //binding of the function given the ability to use this
+    this.handleChangeTitle = this.handleChangeTitle.bind(this)
+  }
+
+  //function with the event as parameter
+  handleChangeTitle(e) {
+    //call the set State function (from react component)
+    // lead to update state object whith the given value
+    // lead to re-render the current component
+    this.setState({ title: e.target.value })
+  }
+
+  //render function use to update the virtual dom
+  render() {
+    // return the react specific virtual dom
+
+    //{...} are used to call javascript code
+    //{this.handleChangeTitle} associate the currrent event to the given function
+    //{this.state.title} call javascript and get the value of the title attribute of the current state
+    return (
+      <div className='App'>
+        <h1>
+          this is my first React Component{' '}
+          <span className='badge badge-primary'>
+            {this.state.mouse_over_num}
+          </span>
+        </h1>
+        <label htmlFor='titleInput'>Title</label>
+        <input
+          type='text'
+          className='form-control'
+          id='titleInput'
+          onChange={this.handleChangeTitle}
+          value={this.state.title}
+        />
+        <h3>{this.state.title}</h3>
+      </div>
+    )
+  }
 }
 
-export default App;
+//export the current classes in order to be used outside
+export default App
