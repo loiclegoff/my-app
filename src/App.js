@@ -9,9 +9,11 @@ class App extends Component {
     //creation of an initial state, a json object
     this.state = {
       title: this.props.title,
+      mouse_over_num: 0,
     }
     //binding of the function given the ability to use this
     this.handleChangeTitle = this.handleChangeTitle.bind(this)
+    this.handleMouseOverTitle = this.handleMouseOverTitle.bind(this)
   }
 
   //function with the event as parameter
@@ -20,6 +22,10 @@ class App extends Component {
     // lead to update state object whith the given value
     // lead to re-render the current component
     this.setState({ title: e.target.value })
+  }
+
+  handleMouseOverTitle() {
+    this.setState({ mouse_over_num: this.state.mouse_over_num + 1 })
   }
 
   //render function use to update the virtual dom
@@ -45,7 +51,9 @@ class App extends Component {
           onChange={this.handleChangeTitle}
           value={this.state.title}
         />
-        <h3>{this.state.title}</h3>
+        <div onMouseOver={this.handleMouseOverTitle}>
+          <h3>{this.state.title}</h3>
+        </div>
       </div>
     )
   }
