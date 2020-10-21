@@ -9,7 +9,11 @@ class LeftSide extends Component {
       return <Spinner animation='border' />
     }
 
-    return <div>{JSON.stringify(this.props.robots?.[0])}</div>
+    return (
+      <div>
+        <Robot robot={this.props.robots?.[0]} />
+      </div>
+    )
   }
 }
 
