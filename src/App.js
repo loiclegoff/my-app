@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './lib/bootstrap-4.5.3-dist/css/bootstrap.min.css'
+import { Badge, Form } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 //extends the object Component
 class App extends Component {
@@ -39,15 +40,10 @@ class App extends Component {
       <div className='App'>
         <h1>
           this is my first React Component{' '}
-          <span className='badge badge-primary'>
-            {this.state.mouse_over_num}
-          </span>
+          <Badge variant='primary'>{this.state.mouse_over_num}</Badge>
         </h1>
-        <label htmlFor='titleInput'>Title</label>
-        <input
-          type='text'
-          className='form-control'
-          id='titleInput'
+        <Form.Label>Title</Form.Label>
+        <Form.Control
           onChange={this.handleChangeTitle}
           value={this.state.title}
         />
