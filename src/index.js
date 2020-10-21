@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker'
 // Send the property title to the App component
 ReactDOM.render(
   <React.StrictMode>
-    <App title='default title' />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 )
