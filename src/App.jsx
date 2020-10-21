@@ -26,7 +26,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col md={4} lg={4}>
-            {JSON.stringify(this.state.robot_list)}
+            <LeftSide robots={this.state.robot_list} />
           </Col>
           <Col md={4} lg={4} />
           <Col md={4} lg={4} />
