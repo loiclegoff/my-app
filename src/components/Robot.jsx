@@ -7,7 +7,7 @@ class Robot extends Component {
   //render function use to update the virtual dom
   render() {
     return (
-      <Card>
+      <Card className='mb-2'>
         <Card.Header>
           <Card.Title>Robot {this.props.id} description</Card.Title>
         </Card.Header>

@@ -11,7 +11,9 @@ class LeftSide extends Component {
 
     return (
       <div>
-        <Robot robot={this.props.robots?.[0]} />
+        {this.props.robots.map((robot) => (
+          <Robot key={robot.id} robot={robot} />
+        ))}
       </div>
     )
   }
