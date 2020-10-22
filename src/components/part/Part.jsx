@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Card } from 'react-bootstrap'
 import Description from './components/Description'
+import { setSelectedPart } from '../../actions'
 
-class Part extends Component {
+class InternalPart extends Component {
   // render function use to update the virtual dom
   onPartClick = () => {
-    this.props.handleOnPartSelected(this.props.part.id)
+    this.props.setSelectedPart(this.props.part.id)
   }
   render() {
     return (
@@ -28,4 +30,21 @@ class Part extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    selectedPartId: state.part.selectedPartId,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedPart: (partId) => {
+      dispatch(setSelectedPart(partId))
+    },
+  }
+}
+
+const Part = connect(mapStateToProps, mapDispatchToProps)(InternalPart)
+
+//export the current classes in order to be used outside
 export default Part

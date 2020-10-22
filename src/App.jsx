@@ -16,20 +16,7 @@ const store = createStore(globalReducer)
 class App extends Component {
   // initiliaze initial state
   state = {
-    robot_list: [],
-    part_list: [],
-    selected_part_ids: [],
     selected_part_id: undefined,
-  }
-
-  getRobotFromId = (id) =>
-    this.state.robot_list.find((robot) => robot.id === id)
-
-  handleOnRobotSelected = (id) => {
-    const current_robot = this.getRobotFromId(id)
-    if (current_robot) {
-      this.setState({ selected_part_ids: current_robot.parts })
-    }
   }
 
   handleOnPartSelected = (id) => {
@@ -46,17 +33,10 @@ class App extends Component {
           </Row>
           <Row>
             <Col md={4} lg={4}>
-              <LeftSide handleOnRobotSelected={this.handleOnRobotSelected} />
+              <LeftSide />
             </Col>
             <Col md={4} lg={4}>
-              {this.state.selected_part_ids.length !== 0 && (
-                <MiddleSide
-                  parts={this.state.part_list}
-                  selectedPartIds={this.state.selected_part_ids}
-                  handleOnPartSelected={this.handleOnPartSelected}
-                  selectedPartId={this.state.selected_part_id}
-                />
-              )}
+              <MiddleSide />
             </Col>
             <Col md={4} lg={4}>
               {this.state.selected_part_id && (
