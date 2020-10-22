@@ -17,15 +17,6 @@ const store = createStore(
 )
 // extends the object Component
 class App extends Component {
-  // initiliaze initial state
-  state = {
-    selected_part_id: undefined,
-  }
-
-  handleOnPartSelected = (id) => {
-    this.setState({ selected_part_id: id })
-  }
-
   // render function use to update the virtual dom
   render() {
     return (
@@ -42,12 +33,7 @@ class App extends Component {
               <MiddleSide />
             </Col>
             <Col md={4} lg={4}>
-              {this.state.selected_part_id && (
-                <RightSide
-                  parts={this.state.part_list}
-                  selectedPartId={this.state.selected_part_id}
-                />
-              )}
+              <RightSide />
             </Col>
           </Row>
         </Container>
