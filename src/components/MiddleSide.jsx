@@ -18,7 +18,12 @@ class MiddleSide extends Component {
     return (
       <div>
         {this.getSelectedParts().map((part) => (
-          <Part key={part.id} part={part} />
+          <Part
+            handleOnPartSelected={this.props.handleOnPartSelected}
+            key={part.id}
+            part={part}
+            selectedPartId={this.props.selectedPartId}
+          />
         ))}
       </div>
     )

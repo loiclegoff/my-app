@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import LeftSide from './components/LeftSide'
 import MiddleSide from './components/MiddleSide'
+import RightSide from './components/RightSide'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 // extends the object Component
@@ -11,6 +12,7 @@ class App extends Component {
     robot_list: [],
     part_list: [],
     selected_part_ids: [],
+    selected_part_id: undefined,
   }
 
   // when component did mount, start to fetch data
@@ -38,6 +40,10 @@ class App extends Component {
     }
   }
 
+  handleOnPartSelected = (id) => {
+    this.setState({ selected_part_id: id })
+  }
+
   // render function use to update the virtual dom
   render() {
     return (
@@ -57,10 +63,19 @@ class App extends Component {
               <MiddleSide
                 parts={this.state.part_list}
                 selectedPartIds={this.state.selected_part_ids}
+                handleOnPartSelected={this.handleOnPartSelected}
+                selectedPartId={this.state.selected_part_id}
               />
             )}
           </Col>
-          <Col md={4} lg={4} />
+          <Col md={4} lg={4}>
+            {this.state.selected_part_id && (
+              <RightSide
+                parts={this.state.part_list}
+                selectedPartId={this.state.selected_part_id}
+              />
+            )}
+          </Col>
         </Row>
       </Container>
     )
