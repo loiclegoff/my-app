@@ -16,9 +16,9 @@ class Description extends Component {
           <td>{this.props.part.title}</td>
         </tr>
         <tr>
-          <td> PRICE</td>
+          <td> PRICE </td>
           <td>
-            <Price value={this.props.part.price} type='d' />
+            <Price value={this.props.part.price} />
           </td>
         </tr>
       </Table>
