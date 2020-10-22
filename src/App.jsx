@@ -11,7 +11,10 @@ import RightSide from './components/RightSide'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const store = createStore(globalReducer)
+const store = createStore(
+  globalReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 // extends the object Component
 class App extends Component {
   // initiliaze initial state
