@@ -13,12 +13,12 @@ const partReducer = (state = initialState, action) => {
     case UPDATE_PARTS:
       return {
         ...state,
-        robots: action.parts,
+        parts: action.parts,
       }
     case UPDATE_SELECTED_PART:
       return {
         ...state,
-        selectedPartId: action.selectedId,
+        selectedPartId: action.partId,
       }
     default:
       return state
