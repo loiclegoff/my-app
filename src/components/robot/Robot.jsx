@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { setSelectedRobot } from '../../actions'
 import { Card } from 'react-bootstrap'
 import Label from './components/Label'
 import Visual from './components/Visual'
 
-class Robot extends Component {
+class InternalRobot extends Component {
   onRobotClick = () => {
-    this.props.onRobotClick(this.props.robot.id)
+    this.props.setSelectedRobot(this.props.robot.id)
   }
   //render function use to update the virtual dom
   render() {
@@ -13,7 +15,9 @@ class Robot extends Component {
       <Card
         className='mb-2'
         border={
-          this.props.robot.id === this.props.selectedId ? 'primary' : 'default'
+          this.props.robot.id === this.props.selectedRobotId
+            ? 'primary'
+            : 'default'
         }
         onClick={this.onRobotClick}>
         <Card.Header>
@@ -31,4 +35,21 @@ class Robot extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    selectedRobotId: state.robot.selectedRobotId,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedRobot: (robotId) => {
+      dispatch(setSelectedRobot(robotId))
+    },
+  }
+}
+
+const Robot = connect(mapStateToProps, mapDispatchToProps)(InternalRobot)
+
+//export the current classes in order to be used outside
 export default Robot
