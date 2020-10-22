@@ -10,6 +10,7 @@ class App extends Component {
   state = {
     robot_list: [],
     part_list: [],
+    selected_part_ids: [],
   }
 
   // when component did mount, start to fetch data
@@ -27,6 +28,16 @@ class App extends Component {
     this.setState({ robot_list, part_list })
   }
 
+  getRobotFromId = (id) =>
+    this.state.robot_list.find((robot) => robot.id === id)
+
+  handleOnRobotSelected = (id) => {
+    const current_robot = this.getRobotFromId(id)
+    if (current_robot) {
+      this.setState({ selected_part_ids: current_robot.parts })
+    }
+  }
+
   // render function use to update the virtual dom
   render() {
     return (
@@ -36,10 +47,18 @@ class App extends Component {
         </Row>
         <Row>
           <Col md={4} lg={4}>
-            <LeftSide robots={this.state.robot_list} />
+            <LeftSide
+              robots={this.state.robot_list}
+              handleOnRobotSelected={this.handleOnRobotSelected}
+            />
           </Col>
           <Col md={4} lg={4}>
-            <MiddleSide parts={this.state.part_list} />
+            {this.state.selected_part_ids.length !== 0 && (
+              <MiddleSide
+                parts={this.state.part_list}
+                selectedPartIds={this.state.selected_part_ids}
+              />
+            )}
           </Col>
           <Col md={4} lg={4} />
         </Row>

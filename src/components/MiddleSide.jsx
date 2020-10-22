@@ -3,6 +3,12 @@ import Part from './part/Part'
 import { Spinner } from 'react-bootstrap'
 
 class MiddleSide extends Component {
+  getSelectedParts = () => {
+    return this.props.parts.filter((part) =>
+      this.props.selectedPartIds.includes(part.id)
+    )
+  }
+
   // render function use to update the virtual dom
   render() {
     if (this.props.parts.length < 1) {
@@ -11,7 +17,7 @@ class MiddleSide extends Component {
 
     return (
       <div>
-        {this.props.parts.map((part) => (
+        {this.getSelectedParts().map((part) => (
           <Part key={part.id} part={part} />
         ))}
       </div>
