@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './lib/bootstrap-4.5.3-dist/css/bootstrap.min.css'
 
 //extends the object Component
 class App extends Component {
