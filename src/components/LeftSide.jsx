@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Robot from './Robot'
+import Robot from './robot/Robot'
 import { Spinner } from 'react-bootstrap'
 
 class LeftSide extends Component {
