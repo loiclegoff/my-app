@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import Robot from './robot/Robot'
 import { Spinner } from 'react-bootstrap'
-
-class LeftSide extends Component {
+import { connect } from 'react-redux'
+import { setRobots } from '../actions'
+class InternalLeftSide extends Component {
   state = {
     selectedId: undefined,
+  }
+
+  async componentDidMount() {
+    const resp_robots = await fetch(
+      'https://pure-temple-56604.herokuapp.com/robots'
+    )
+    const robot_list = await resp_robots.json()
+    this.props.setRobots(robot_list)
   }
 
   onRobotClick = (id) => {
@@ -32,6 +41,22 @@ class LeftSide extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    robots: state.robot.robots,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setRobots: (robots) => {
+      dispatch(setRobots(robots))
+    },
+  }
+}
+
+const LeftSide = connect(mapStateToProps, mapDispatchToProps)(InternalLeftSide)
 
 //export the current classes in order to be used outside
 export default LeftSide
