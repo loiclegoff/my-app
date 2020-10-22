@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -16,30 +16,28 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 // extends the object Component
-class App extends Component {
+const App = () => {
   // render function use to update the virtual dom
-  render() {
-    return (
-      <Provider store={store}>
-        <Container fluid>
-          <Row>
-            <h1> Welcome to robot shop</h1>
-          </Row>
-          <Row>
-            <Col md={4} lg={4}>
-              <LeftSide />
-            </Col>
-            <Col md={4} lg={4}>
-              <MiddleSide />
-            </Col>
-            <Col md={4} lg={4}>
-              <RightSide />
-            </Col>
-          </Row>
-        </Container>
-      </Provider>
-    )
-  }
+  return (
+    <Provider store={store}>
+      <Container fluid>
+        <Row>
+          <h1> Welcome to robot shop</h1>
+        </Row>
+        <Row>
+          <Col md={4} lg={4}>
+            <LeftSide />
+          </Col>
+          <Col md={4} lg={4}>
+            <MiddleSide />
+          </Col>
+          <Col md={4} lg={4}>
+            <RightSide />
+          </Col>
+        </Row>
+      </Container>
+    </Provider>
+  )
 }
 
 // export the current classes in order to be used outside

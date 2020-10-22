@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Badge, Button } from 'react-bootstrap'
 
-class Price extends Component {
+const Price = (props) => {
   // render function use to update the virtual dom
-  render() {
-    return (
-      <Button variant='primary'>
-        Price <Badge>{this.props.value}</Badge>
-      </Button>
-    )
-  }
+
+  return (
+    <Button variant='primary'>
+      Price <Badge>{props.value}</Badge>
+    </Button>
+  )
 }
 
 export default Price

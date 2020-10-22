@@ -1,23 +1,18 @@
-import React, { Component } from 'react'
-import { Spinner } from 'react-bootstrap'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Panel from './part/Panel'
-import { connect } from 'react-redux'
+import { createSelector } from 'reselect'
 
-class InternalRightSide extends Component {
+const selectPart = createSelector(
+  (state) => state.part.parts,
+  (state) => state.part.selectedPartId,
+  (parts, selectedPartId) => parts.find((part) => part.id === selectedPartId)
+)
+
+const RightSide = () => {
+  const part = useSelector(selectPart)
   // render function use to update the virtual dom
-  render() {
-    return <> {this.props.part && <Panel part={this.props.part} />} </>
-  }
+  return <> {part && <Panel part={part} />} </>
 }
-
-const mapStateToProps = (state) => {
-  return {
-    part: state.part.parts.find(
-      (part) => part.id === state.part.selectedPartId
-    ),
-  }
-}
-
-const RightSide = connect(mapStateToProps)(InternalRightSide)
 
 export default RightSide

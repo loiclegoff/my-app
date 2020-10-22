@@ -1,50 +1,31 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Card } from 'react-bootstrap'
 import Description from './components/Description'
 import { setSelectedPart } from '../../actions'
 
-class InternalPart extends Component {
+const Part = (props) => {
+  const selectedPartId = useSelector((state) => state.part.selectedPartId)
+  const dispatch = useDispatch()
   // render function use to update the virtual dom
-  onPartClick = () => {
-    this.props.setSelectedPart(this.props.part.id)
+  const onPartClick = () => {
+    dispatch(setSelectedPart(props.part.id))
   }
-  render() {
-    return (
-      <Card
-        className='mb-2'
-        onClick={this.onPartClick}
-        border={
-          this.props.part.id === this.props.selectedPartId
-            ? 'primary'
-            : 'default'
-        }>
-        <Card.Header>
-          <Card.Title>Part {this.props.part.id} description</Card.Title>
-        </Card.Header>
-        <Card.Body>
-          <Description part={this.props.part} />
-        </Card.Body>
-      </Card>
-    )
-  }
+  console.log(props.part.id === selectedPartId, props.part.id, selectedPartId)
+  return (
+    <Card
+      className='mb-2'
+      onClick={onPartClick}
+      border={props.part.id === selectedPartId ? 'primary' : 'default'}>
+      <Card.Header>
+        <Card.Title>Part {props.part.id} description</Card.Title>
+      </Card.Header>
+      <Card.Body>
+        <Description part={props.part} />
+      </Card.Body>
+    </Card>
+  )
 }
-
-const mapStateToProps = (state) => {
-  return {
-    selectedPartId: state.part.selectedPartId,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setSelectedPart: (partId) => {
-      dispatch(setSelectedPart(partId))
-    },
-  }
-}
-
-const Part = connect(mapStateToProps, mapDispatchToProps)(InternalPart)
 
 //export the current classes in order to be used outside
 export default Part
