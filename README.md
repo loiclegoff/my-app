@@ -504,7 +504,7 @@ In this project, you need to use hook :
 - useEffect (in **LeftSide** and **MiddleSide** to fetch Data)
 - useState is not required
 
-# Step 7 : Advanded Practice
+# Step 7 : Advanced Practice
 
 ## Remove Redux to use native Context of react
 
@@ -515,7 +515,7 @@ In this project, you need to use hook :
 
 Improve code base with memorization : useMemo, useCallback, memo.
 
-## Lazy loading and Supence
+## Lazy loading and Suspense
 
 [Documentation](https://reactjs.org/docs/react-api.html#reactsuspense)
 
