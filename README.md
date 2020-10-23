@@ -164,6 +164,8 @@ Open `public/index.html` and add bootstrap import to use css rules
 ## Exemple
 
 ```jsx
+import React, { Component } from 'react'
+
 class App extends Component {
   state = {
     // state is initialized by a props
