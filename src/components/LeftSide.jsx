@@ -8,7 +8,7 @@ class LeftSide extends Component {
     return (
         <Col md={4} lg={4}>
             {
-                this.props.listRobots.map(robot => <Robot key={robot.id} robot={robot}/>)
+                this.props.listRobots.map(robot => <Robot key={robot.id} robot={robot} onRobotSelected={this.props.onRobotSelected}/>)
             }
         </Col>
     )
