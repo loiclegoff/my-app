@@ -258,7 +258,9 @@ GET    /robots/1
 ## Application
 
 You must create the following application :
-[PICTURE]
+
+![App](/screenshots/step-2.png)
+
 Please take the time to analyze this image and identify the required components
 
 To do :
