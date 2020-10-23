@@ -41,7 +41,7 @@ class InternalApp extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    listRobots: state.robots
+    listRobots: state.robotReducer.listRobots
   }
 }
 

@@ -1,7 +1,7 @@
 import { UPDATE_ROBOTS } from '../actions'
 
 const initialState = {
-  robots: [],
+    listRobots: [],
   /*...*/
 }
 
@@ -14,7 +14,7 @@ const robotReducer = (state = initialState, action) => {
       // state is immutable, you must create a new object with another reference
       return {
         ...state,
-        robots: action.robots,
+        listRobots: action.robots,
       }
     default:
       return state

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import robotReducer from './reducers/robotReducer';
 import {createStore} from "redux"
 import {Provider} from "react-redux"
+import { globalReducer } from './reducers';
 
 const store = createStore(
-  robotReducer,
+  globalReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
