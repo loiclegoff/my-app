@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import {Button, Container, Col, Row} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import LeftSide from "./components/LeftSide"
+class App extends Component {
+  state = {
+    listRobots: []
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  componentDidMount() {
+    fetch("https://pure-temple-56604.herokuapp.com/robots").then(
+      resp => resp.json()).then(listRobots => this.setState({listRobots}))
+
+  }
+
+  render() {
+    return (
+        <Container>
+          <Row>
+            <LeftSide listRobots={this.state.listRobots}/>
+            <Col md={4} lg={4}>Col2</Col>
+            <Col md={4} lg={4}>Col3</Col>
+          </Row>
+        </Container>
+
+    )
+  }
 }
-
-export default App;
+export default App
