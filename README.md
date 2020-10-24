@@ -585,3 +585,12 @@ Improve code base with memorization : useMemo, useCallback, memo.
 - [Redux Hooks API Reference](https://react-redux.js.org/api/hooks)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [JavaScript Documentation](https://developer.mozilla.org/fr/docs/Web/JavaScript/)
+
+# Tips
+
+## Bug to use breakpoints of brower
+
+The current version of `create-react-app` does not allow using Chrome/FF breakpoints. To fix locally, edit the file : `nodes_modules/react-scripts/config/webpack.config.js` and change `'cheap-module-source-map'` to `'eval-source-map'`.
+**This is a very bad practice** to edit node_modules.
+
+For more informations, see: [github issue](https://github.com/facebook/create-react-app/issues/6074)
