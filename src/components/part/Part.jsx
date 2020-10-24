@@ -11,7 +11,6 @@ const Part = (props) => {
   const onPartClick = () => {
     dispatch(setSelectedPart(props.part.id))
   }
-  console.log(props.part.id === selectedPartId, props.part.id, selectedPartId)
   return (
     <Card
       className='mb-2'
