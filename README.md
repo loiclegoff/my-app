@@ -290,7 +290,7 @@ To do :
 
 - [branch](https://github.com/loiclegoff/my-app/tree/step2-1_robot_img_video)
 - [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step1-first_app_with_bootstrap_components...step2-1_robot_img_video?diff=split)
-- [branch from live coding](https://github.com/loiclegoff/my-app/tree/step2-1_robot_img_video-live_conding)
+- [branch from live coding](https://github.com/loiclegoff/my-app/tree/step2-1_robot_img_video-live_coding)
 
 # Step 3 : list robots
 
