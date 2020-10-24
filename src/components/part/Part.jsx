@@ -1,20 +1,21 @@
-import React, {Component} from 'react';
-import {Card} from 'react-bootstrap';
-import Label from "../common/Label"
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import { setSelectedPartId } from '../../actions'
+import Label from '../common/Label'
 
-class Part  extends Component {
-
-  render() {
-    return (
-        <Card className="mb-2">
-            <Card.Header>
-                {this.props.part.title}
-            </Card.Header>
-            <Card.Body>
-                <Label id={this.props.part.id} title={this.props.part.title}/>
-            </Card.Body>
-        </Card>
-    )
+const Part = (props) => {
+  const dispatch = useDispatch()
+  const onPartSelected = () => {
+    dispatch(setSelectedPartId(props.part.id))
   }
+  return (
+    <Card className='mb-2' onClick={onPartSelected}>
+      <Card.Header>{props.part.title}</Card.Header>
+      <Card.Body>
+        <Label id={props.part.id} title={props.part.title} />
+      </Card.Body>
+    </Card>
+  )
 }
 export default Part

@@ -1,7 +1,8 @@
-import { UPDATE_ROBOTS } from '../actions'
+import { SELECT_ROBOT_ID, UPDATE_ROBOTS } from '../actions'
 
 const initialState = {
-    listRobots: [],
+  listRobots: [],
+  selectRobotId: undefined,
   /*...*/
 }
 
@@ -15,6 +16,11 @@ const robotReducer = (state = initialState, action) => {
       return {
         ...state,
         listRobots: action.robots,
+      }
+    case SELECT_ROBOT_ID:
+      return {
+        ...state,
+        selectRobotId: action.robotId,
       }
     default:
       return state

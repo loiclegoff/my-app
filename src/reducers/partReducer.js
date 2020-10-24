@@ -1,6 +1,8 @@
+import { SELECT_PART_ID, UPDATE_PARTS } from '../actions'
 
 const initialState = {
-  parts: [],
+  listParts: [],
+  selectPartId: undefined,
   /*...*/
 }
 
@@ -9,6 +11,16 @@ const initialState = {
  */
 const partReducer = (state = initialState, action) => {
   switch (action.type) {
+    case UPDATE_PARTS:
+      return {
+        ...state,
+        listParts: action.parts,
+      }
+    case SELECT_PART_ID:
+      return {
+        ...state,
+        selectPartId: action.partId,
+      }
     default:
       return state
   }
