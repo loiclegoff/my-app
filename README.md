@@ -282,6 +282,12 @@ Update one component to show all robots
 
 # Step 4 : list robots and associated parts
 
+## Goal
+
+![App](/screenshots/step-4.png)
+
+Take the time to analyze this image and determine how many components you need to create
+
 ## Fetch data
 
 For this step you can use these endpoints:
@@ -325,6 +331,10 @@ You can re-use Price and Visual components
 </details>
 
 # Step 5 : list robots and associated parts with redux
+
+## Redux flow
+
+![App](/screenshots/redux-flow.png)
 
 ## Create actions
 
@@ -387,6 +397,7 @@ You must create 2 reducers with an initial state. Each declared action must be u
 
 ## Store and Provider
 
+Create the `globalReducer` to merge `robotReducer` and `partReducer`.
 Add the store and the provider in `src/App`.
 You can add options to use ReduxDevTools on Firefox/Chrome:
 
@@ -519,10 +530,11 @@ Improve code base with memorization : useMemo, useCallback, memo.
 
 [Documentation](https://reactjs.org/docs/react-api.html#reactsuspense)
 
-# Sources and Inspirations
+# Docs, Sources and Inspirations
 
 - [Tania Rascia Tutorial](https://www.taniarascia.com/getting-started-with-react/)
 - [Jacques Saraydaryan Tutorial](https://github.com/jacques-saraydaryan/front-end-react.js)
 - [Redux Basic Tutorial](https://redux.js.org/basics/basic-tutorial)
 - [Redux Hooks API Reference](https://react-redux.js.org/api/hooks)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [JavaScript Documentation](https://developer.mozilla.org/fr/docs/Web/JavaScript/)
