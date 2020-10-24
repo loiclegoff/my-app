@@ -222,6 +222,11 @@ Modify `index.js` and `App.js` to:
         </p>
     </details>
 
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step0-first_app)
+- [difference with previous step](https://github.com/loiclegoff/my-app/compare/step0-first_app...step1-first_app_with_bootstrap_components?diff=split)
+
 # Step 1 : use bootstrap components
 
 Install bootstrap
@@ -243,6 +248,11 @@ import { Button } from 'react-bootstrap'
 ```
 
 Others components : https://react-bootstrap.github.io/components/alerts
+
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step1-first_app_with_bootstrap_components)
+- [difference with previous step](https://github.com/loiclegoff/my-app/compare/step0-first_app...step1-first_app_with_bootstrap_components?diff=split)
 
 # Step 2 : 1 robot
 
@@ -276,9 +286,20 @@ To do :
 - A Robot component
 - A Label component for the Robot Component
 
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step2-1_robot_img_video)
+- [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step1-first_app_with_bootstrap_components...step2-1_robot_img_video?diff=split)
+- [branch from live coding](https://github.com/loiclegoff/my-app/tree/step2-1_robot_img_video-live_conding)
+
 # Step 3 : list robots
 
 Update one component to show all robots
+
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step3-list_of_robots_img_video)
+- [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step2-1_robot_img_video...step3-list_of_robots_img_video?diff=split)
 
 # Step 4 : list robots and associated parts
 
@@ -329,6 +350,16 @@ Add a RightSide Component to display description of selected part.
 <summary>help</summary>
 You can re-use Price and Visual components
 </details>
+
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step4-list_of_robots_with_related_parts)
+- [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step3-list_of_robots_img_video...step4-list_of_robots_with_related_parts?diff=split)
+
+### With others features
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step4bis-list_of_robots_with_related_parts_and_right_panel)
+- [difference](https://github.com/loiclegoff/my-app/compare/step4-list_of_robots_with_related_parts...step4bis-list_of_robots_with_related_parts_and_right_panel?diff=split)
 
 # Step 5 : list robots and associated parts with redux
 
@@ -468,6 +499,11 @@ export default MiddleSide
 - Dispatch selected part in the **Part** component
 - Subscribe to store and get the selected part in the **RightSide** component
 
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step5-list_of_robots_with_related_parts_redux)
+- [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step4bis-list_of_robots_with_related_parts_and_right_panel...step5-list_of_robots_with_related_parts_redux?diff=split)
+
 # Step 6 : Reactoring of code to use Hooks
 
 ## Exemple
@@ -515,6 +551,11 @@ In this project, you need to use hook :
 - useEffect (in **LeftSide** and **MiddleSide** to fetch Data)
 - useState is not required
 
+## Correction proposal
+
+- [branch](https://github.com/loiclegoff/my-app/tree/step6-refactor_with_hooks)
+- [difference with the previous step](https://github.com/loiclegoff/my-app/compare/step5-list_of_robots_with_related_parts_redux...step6-refactor_with_hooks)
+
 # Step 7 : Advanced Practice
 
 ## Remove Redux to use native Context of react
@@ -529,6 +570,12 @@ Improve code base with memorization : useMemo, useCallback, memo.
 ## Lazy loading and Suspense
 
 [Documentation](https://reactjs.org/docs/react-api.html#reactsuspense)
+
+# Others branches:
+
+- [Live coding until the step 5](https://github.com/loiclegoff/my-app/tree/develop)
+  - custom hook (useSearch)
+  - mix class component and function component
 
 # Docs, Sources and Inspirations
 
